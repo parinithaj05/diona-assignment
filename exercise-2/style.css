@@ -1,0 +1,559 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --page-width: 612pt;
+  --page-height: 792pt;
+  --page-left: 34.5pt;
+  --page-right: 33.5pt;
+  --entered-blue: #1f4e79;
+  --page-shadow: 0 4px 18px rgba(0, 0, 0, 0.16);
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+.dataset-controls {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin: 0 auto 18px;
+}
+
+.dataset-controls button {
+  border: 1px solid #305f80;
+  border-radius: 3px;
+  background: #fff;
+  color: #234b67;
+  padding: 7px 12px;
+  font: 14px Arial, Helvetica, sans-serif;
+  cursor: pointer;
+}
+
+.dataset-controls button:hover,
+.dataset-controls button:focus-visible {
+  background: #eef5f9;
+}
+
+.dataset-controls button[aria-pressed="true"] {
+  background: #1f4e79;
+  color: #fff;
+}
+
+body {
+  background: #ececec;
+  color: #000;
+  font-family: Georgia, "Times New Roman", serif;
+  padding: 28px 0;
+}
+
+.report {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+}
+
+.print-report {
+  display: none;
+}
+
+.print-report.is-measuring {
+  position: absolute;
+  top: 0;
+  left: -10000px;
+  display: block;
+  visibility: hidden;
+}
+
+.print-page {
+  position: relative;
+  width: var(--page-width);
+  height: var(--page-height);
+  overflow: hidden;
+  background: #fff;
+}
+
+.print-page-content {
+  position: absolute;
+  top: 26pt;
+  right: var(--page-right);
+  bottom: 68pt;
+  left: var(--page-left);
+  overflow: visible;
+}
+
+.print-flow-page .report-header,
+.print-flow-page .introduction,
+.print-flow-page .expense-section,
+.print-flow-page .bus-taxi-section,
+.print-flow-page .privacy-section {
+  position: relative;
+  inset: auto;
+  width: 544pt;
+}
+
+.print-flow-page .report-header {
+  height: 65pt;
+}
+
+.print-flow-page .introduction {
+  margin-top: 17.7pt;
+}
+
+.print-flow-page .expense-section,
+.print-flow-page .bus-taxi-section {
+  margin-top: 14pt;
+}
+
+.print-flow-page .expense-section table {
+  margin-top: 12pt;
+}
+
+.print-flow-page .mileage-note {
+  margin-bottom: 10pt;
+}
+
+.print-flow-page .mileage-section table,
+.print-flow-page .bus-taxi-section table {
+  margin-top: 0;
+}
+
+.print-flow-page .privacy-section {
+  margin-top: 14pt;
+}
+
+.report-page {
+  position: relative;
+  width: var(--page-width);
+  height: var(--page-height);
+  overflow: hidden;
+  background: #fff;
+  box-shadow: var(--page-shadow);
+}
+
+.report-header {
+  position: absolute;
+  top: 26pt;
+  left: var(--page-left);
+  right: var(--page-right);
+  height: 65pt;
+}
+
+.wcb-logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 155pt;
+  height: auto;
+  display: block;
+}
+
+.contact-details {
+  position: absolute;
+  top: -1pt;
+  left: 167.4pt;
+  margin: 0;
+  font-family: "Century Gothic", CenturyGothic, Arial, sans-serif;
+  font-size: 9pt;
+  font-style: normal;
+  line-height: 11.2pt;
+}
+
+.request-heading {
+  position: absolute;
+  top: 3pt;
+  left: 329.9pt;
+  width: 213pt;
+}
+
+.request-heading h1 {
+  margin: 0;
+  font-family: "Century Gothic", CenturyGothic, Arial, sans-serif;
+  font-size: 12.5pt;
+  font-weight: 700;
+  line-height: 15.9pt;
+}
+
+.claim-number {
+  width: 111pt;
+  height: 23pt;
+  margin-top: 3pt;
+  padding: 4pt 3pt 2pt;
+  border: 1.5pt solid #000;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11pt;
+  line-height: 12pt;
+  white-space: nowrap;
+}
+
+.entered-value,
+.entered-row td {
+  color: var(--entered-blue);
+}
+
+.introduction {
+  position: absolute;
+  top: 108.7pt;
+  left: var(--page-left);
+  margin: 0;
+  font-size: 11pt;
+  line-height: 14pt;
+}
+
+.expense-section {
+  position: absolute;
+  left: var(--page-left);
+  width: 544pt;
+}
+
+.expense-section h2,
+.bus-taxi-section h2 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 12.5pt;
+  font-weight: 700;
+  line-height: 15pt;
+}
+
+.prescription-section { top: 137.3pt; }
+.otc-section { top: 237.9pt; }
+.supplies-section { top: 336.2pt; }
+.parking-section { top: 441.2pt; }
+.mileage-section { top: 534.8pt; }
+
+.expense-section table {
+  margin-top: 15pt;
+}
+
+table {
+  width: 544pt;
+  border-collapse: collapse;
+  table-layout: fixed;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 8pt;
+  line-height: 10.5pt;
+}
+
+th,
+td {
+  max-width: 0;
+  word-break: normal;
+  overflow-wrap: anywhere;
+  hyphens: auto;
+  vertical-align: top;
+  text-align: left;
+  border: 0.7pt solid #000;
+  padding: 2.7pt 4pt;
+  font-weight: 400;
+}
+
+thead tr {
+  height: 28.6pt;
+}
+
+tbody tr {
+  height: 26.3pt;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+thead {
+  display: table-header-group;
+}
+
+tbody td {
+  padding-top: 3.2pt;
+}
+
+.supplies-section thead tr {
+  height: 33.2pt;
+}
+
+.supplies-section tbody tr {
+  height: 26.3pt;
+}
+
+.supplies-section tbody td,
+.mileage-section tbody td {
+  padding-top: 2pt;
+  padding-bottom: 1.5pt;
+}
+
+.otc-section thead tr {
+  height: 26.3pt;
+}
+
+.parking-section thead tr {
+  height: 26.3pt;
+}
+
+.parking-section table {
+  margin-top: 12.7pt;
+}
+
+.mileage-note {
+  margin: 8pt 0 17.3pt;
+  font-size: 11pt;
+  line-height: 13.5pt;
+}
+
+.mileage-section table {
+  margin-top: 0;
+}
+
+.mileage-section thead tr {
+  height: 26.3pt;
+}
+
+.mileage-section th {
+  padding-top: 2pt;
+  padding-bottom: 2pt;
+}
+
+.page-footer {
+  position: absolute;
+  left: 49.4pt;
+  right: 50pt;
+  bottom: 29.2pt;
+  height: 27pt;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 9.5pt;
+  line-height: 11pt;
+}
+
+.footer-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.page-number {
+  margin-top: 4.5pt;
+  text-align: right;
+}
+
+.page-two .page-footer {
+  height: 35pt;
+  bottom: 29.2pt;
+}
+
+.page-two .footer-line > span:first-child {
+  max-width: 105pt;
+}
+
+.bus-taxi-section {
+  position: absolute;
+  top: 30.5pt;
+  left: var(--page-left);
+  width: 544pt;
+}
+
+.bus-taxi-section h2 sup {
+  position: relative;
+  top: -2pt;
+  font-size: 8pt;
+}
+
+.approval-note {
+  margin: 11.5pt 0 7.8pt;
+  font-size: 11pt;
+  line-height: 14pt;
+}
+
+.bus-taxi-section table {
+  margin: 0;
+}
+
+.bus-taxi-section thead tr {
+  height: 34pt;
+}
+
+.bus-taxi-section tbody tr {
+  height: 26.3pt;
+}
+
+.bus-taxi-section tbody td {
+  padding-top: 2pt;
+  padding-bottom: 1.5pt;
+}
+
+.privacy-section {
+  position: absolute;
+  top: 184.5pt;
+  left: var(--page-left);
+  width: 543pt;
+  min-height: 49pt;
+  padding-top: 13.2pt;
+  border-top: 1.5pt solid #b7b7b7;
+  display: flex;
+  align-items: flex-start;
+  gap: 7pt;
+}
+
+.privacy-section p {
+  margin: 0;
+  font-size: 11pt;
+  line-height: 14pt;
+}
+
+.privacy-section a {
+  color: var(--entered-blue);
+  text-decoration: underline;
+  text-decoration-thickness: 0.6pt;
+  text-underline-offset: 1pt;
+}
+
+.pdf-checkbox {
+  position: relative;
+  flex: 0 0 10pt;
+  width: 10pt;
+  height: 10pt;
+  margin-top: 1pt;
+  border: 0.8pt solid #000;
+  background: #fff;
+}
+
+.pdf-checkbox.is-checked::after {
+  content: "";
+  position: absolute;
+  left: 2.1pt;
+  top: -0.4pt;
+  width: 3.2pt;
+  height: 6.6pt;
+  border: solid #000;
+  border-width: 0 1.4pt 1.4pt 0;
+  transform: rotate(45deg);
+}
+
+.report-page.expanded {
+  height: auto;
+  min-height: var(--page-height);
+  overflow: visible;
+}
+
+.page-one.expanded {
+  padding: 26pt var(--page-right) 55pt var(--page-left);
+}
+
+.page-one.expanded .report-header,
+.page-one.expanded .introduction,
+.page-one.expanded .expense-section,
+.page-one.expanded .page-footer,
+.page-two.expanded .bus-taxi-section,
+.page-two.expanded .privacy-section,
+.page-two.expanded .page-footer {
+  position: relative;
+  inset: auto;
+}
+
+.page-one.expanded .report-header {
+  width: 544pt;
+}
+
+.page-one.expanded .introduction {
+  margin-top: 17.7pt;
+}
+
+.page-one.expanded .expense-section {
+  margin-top: 14pt;
+}
+
+.page-one.expanded .expense-section table {
+  margin-top: 12pt;
+}
+
+.page-one.expanded .mileage-note {
+  margin-bottom: 10pt;
+}
+
+.page-one.expanded .mileage-section table {
+  margin-top: 0;
+}
+
+.page-one.expanded .page-footer,
+.page-two.expanded .page-footer {
+  width: 512.6pt;
+  margin: 45pt 15.5pt 0;
+}
+
+.page-two.expanded {
+  padding: 30.5pt var(--page-right) 55pt var(--page-left);
+}
+
+.page-two.expanded .bus-taxi-section {
+  width: 544pt;
+}
+
+.page-two.expanded .privacy-section {
+  width: 543pt;
+  margin-top: 14pt;
+}
+
+@media print {
+  @page {
+    size: Letter;
+    margin: 0;
+  }
+
+  body {
+    padding: 0;
+    background: #fff;
+  }
+
+  .dataset-controls,
+  .report {
+    display: none !important;
+  }
+
+  .print-report {
+    display: block;
+  }
+
+  .print-page {
+    box-shadow: none;
+    break-after: page;
+    page-break-after: always;
+  }
+
+  table {
+    break-inside: auto;
+    page-break-inside: auto;
+  }
+
+  thead {
+    display: table-header-group;
+  }
+
+  tr,
+  th,
+  td {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .expense-section h2,
+  .bus-taxi-section h2,
+  .mileage-note,
+  .approval-note {
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  .page-footer,
+  .privacy-section {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .print-page:last-child {
+    break-after: auto;
+    page-break-after: auto;
+  }
+}
