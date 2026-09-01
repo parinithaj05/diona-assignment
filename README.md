@@ -126,11 +126,11 @@ The dataset controls are automatically hidden in print mode.
 
 ### Exercise 1 — Worker Progress Report
 
-Video link: videos/Exercise 1.mp4
+[Watch Exercise 1 Video](videos/Exercise%201.mp4)
 
 ### Exercise 2 — Medical & Travel Expense Request
 
-Video link: videos/Exercise 2.mp4
+[Watch Exercise 2 Video](videos/Exercise%202.mp4)
 
 The videos demonstrate:
 
